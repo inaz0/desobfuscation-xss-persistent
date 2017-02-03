@@ -46,9 +46,9 @@ function xor_enc($payload_one, $key_one) {
   for ( $i = 0; $i < strlen($payload_one); $i++) {
 	 
 	$ord1 = ord($payload_one[$i]);
-	$ord2 = $key_one[ ( $i % strlen($key_one) ) ];
+	$ord2 = ord($key_one[ ( $i % strlen($key_one) ) ]);
 	
-	$ordTot = $ord1 xor $ord2;
+	$ordTot = $ord1 ^ $ord2;
 	  
     $res .= chr( $ordTot );
   }
